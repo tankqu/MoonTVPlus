@@ -17,7 +17,10 @@ export interface LegadoRuleSearch {
   bookUrl?: string;
   kind?: string;
   lastChapter?: string;
+  checkKeyWord?: string;
+  wordCount?: string;
 }
+
 
 export type LegadoRuleExplore = LegadoRuleSearch;
 
@@ -29,6 +32,7 @@ export interface LegadoRuleBookInfo {
   tocUrl?: string;
   kind?: string;
   lastChapter?: string;
+  wordCount?: string;
 }
 
 export interface LegadoRuleToc {
@@ -37,11 +41,18 @@ export interface LegadoRuleToc {
   chapterUrl?: string;
   isVip?: string;
   isPay?: string;
+  nextTocUrl?: string;
+  updateTime?: string;
+  wordCount?: string;
+  chapterInfo?: string;
 }
 
 export interface LegadoRuleContent {
   content?: string;
   nextContentUrl?: string;
+  imageStyle?: string;
+  sourceRegex?: string;
+  payAction?: string;
 }
 
 export interface LegadoBookSourceRule {
@@ -49,13 +60,23 @@ export interface LegadoBookSourceRule {
   bookSourceUrl?: string;
   bookSourceGroup?: string;
   bookSourceType?: number;
+  customButton?: boolean | unknown;
+  eventListener?: boolean | unknown;
+  variable?: string | Record<string, unknown>;
+  loginUi?: string | unknown;
+  concurrentRate?: string | number;
+  respondTime?: number;
+  lastUpdateTime?: string | number;
   enabled?: boolean;
+  enabledCookieJar?: boolean;
   enabledExplore?: boolean;
   exploreUrl?: string;
   header?: string | Record<string, string>;
   loginUrl?: string;
   searchUrl?: string;
   bookInfoUrl?: string;
+  bookInfoInit?: string;
+  bookUrlPattern?: string;
   tocUrl?: string;
   chapterUrl?: string;
   ruleSearch?: LegadoRuleSearch;
@@ -63,6 +84,7 @@ export interface LegadoBookSourceRule {
   ruleBookInfo?: LegadoRuleBookInfo;
   ruleToc?: LegadoRuleToc;
   ruleContent?: LegadoRuleContent;
+  ruleReview?: unknown;
   customOrder?: number;
   weight?: number;
 }
